@@ -109,7 +109,7 @@ Whether it's an application or a package, your project should absolutely come wi
 Translating all your ideas and thoughts formally on paper can be a little difficult, but you'll get better over time, and doing so makes a significant difference in helping others realize the value of your project. Writing this documentation can also help you improve the design of your code, as you're forced to think through your design decisions more thoroughly. It also helps future contributors to follow your original intentions.
 
 ## 11 Version Control
-Scenario #1
+### Scenario #1
 Let's walk through the Git commands that go along with each step in the scenario you just observed in the video.
 
 Step 1: You have a local version of this repository on your laptop, and to get the latest stable version, you pull from the develop branch.
@@ -161,4 +161,30 @@ Step 6: Now, you can switch back to the demographic branch to continue your prog
 ```
 # Switch to the demographic branch
 git checkout demographic
+```
+### Scenario #2
+Let's walk through the Git commands that go along with each step in the scenario you just observed in the video.
+
+Step 1: You check your commit history, seeing messages about the changes you made and how well the code performed.
+```
+# View the log history
+git log
+```
+Step 2: The model at this commit seemed to score the highest, so you decide to take a look.
+```
+# Check out a commit
+git checkout bc90f2cbc9dc4e802b46e7a153aa106dc9a88560
+```
+After inspecting your code, you realize what modifications made it perform well, and use those for your model.
+
+Step 3: Now, you're confident merging your changes back into the development branch and pushing the updated recommendation engine.
+```
+# Switch to the develop branch
+git checkout develop
+
+# Merge the friend_groups branch into the develop branch
+git merge --no-ff friend_groups
+
+# Push your changes to the remote repository
+git push origin develop
 ```
