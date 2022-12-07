@@ -68,3 +68,7 @@ The project on which you're working determines which of these is more important 
   * Inline comments - line level
   * Docstrings - module and function level
   * Project documentation - project level
+## 8. In-line comments
+* Inline comments are text following hash symbols throughout your code. They are used to explain parts of your code, and really help future contributors understand your work.
+* Comments often document the major steps of complex code. Readers may not have to understand the code to follow what it does if the comments explain it. However, others would argue that this is using comments to justify bad code, and that if code requires comments to follow, it is a sign refactoring is needed.
+* Comments are valuable for explaining where code cannot. For example, **the history behind why a certain method was implemented a specific way**. Sometimes an unconventional or seemingly arbitrary approach may be applied because of some obscure external variable causing side effects. These things are difficult to explain with code.
