@@ -22,6 +22,85 @@ Documentation is additional text or illustrated information that comes with, or 
 Docstrings or documentation strings are valuable pieces of documentation that explain the functionality of any function or module in your code. Ideally, all of your functions should have docstrings. Here's a function for population density. A docstring is always surrounded by triple quotes. If you feel that this one line of documentation is sufficient for you to end the docstring at this point, single line docstrings are perfectly acceptable. If however, you think that the function is complicated enough to warrant a longer description, you can add a more thorough paragraph after the one line summary. The next element of a docstring is an explanation of the function's arguments. Here, you list the arguments, state their purpose, and state what types the arguments should be. Finally, it's common to provide some description of the output of the function. Every piece of the docstring is optional. However, docstrings are part of good coding practice. They assist you and future users of your code in understanding the code you produce. You can read a more thorough explanation of docstring conventions in the link below.
 ## 10. Version Control
 To familiarize yourself with how you may use version control at work, we'll first take a look at an example scenario where you are data scientists using Git at work. We'll practice the commands to use in these type of scenarios, and then we'll go over some of the unique challenges and techniques for versioning data science work.
-
+### Scenario #1
 https://www.youtube.com/watch?v=C92YcuwjZOs&t=16s
 Imagine you're part of a data science team that's responsible for building a company's recommendation engine. You're sitting at your desk working on a feature that incorporates demographic data like age, gender, and relationship status to improve recommendations to users. You're midway through this implementation when your boss comes over to notify you that the business intelligence team predicts that a user's friend groups will produce the best recommendations in the short-term and wanted to prioritize this immediately. Looking at the recommendation engine code you have on your screen, you can see there's a bunch of unfinished non-working code that you've added while working on the demographic feature. Running this code right now would break. If you want to get started on this new friend groups feature now, you'd have to undo all of this work maybe by editing back lines you've modified and committing out lines of code you added. This would be a very messy and risky route, or say you're using a version control system like Git. You can simply commit your changes and create another branch for this new feature. Here's what I mean. Your company has a Git repository for its recommendation engine and has a master branch, which holds the code used in production and the develop branch which holds the latest stable version of code with changes for the next release. You have a local version of this repository on your laptop, and to get the latest stable version you pull from the develop branch. When you start working on this demographic feature, you create a new branch for this called "Demographic" and start working on your code in this branch. However, in the middle of your work, you need to work on another feature. So, you commit your changes on this demographic branch and switch back to the develop branch. From the stable develop branch, you create another branch for a new feature called friend groups. After you finish your work on the friend groups branch, you commit your changes, switch back to development branch, merge it with the friend groups branch, and push this to the remote repository's develop branch. Now, you can switch back to the demographic branch to continue your progress on that feature. As you can see here, proper use of Git commits and branches can help you work on multiple features at once and switch between them with ease.
+
+Let's walk through the Git commands that go along with each step in the scenario you just observed in the video.
+
+Step 1: You have a local version of this repository on your laptop, and to get the latest stable version, you pull from the develop branch.
+```
+# Switch to the develop branch
+git checkout develop
+
+# Pull the latest changes in the develop branch
+git pull
+```
+Step 2: When you start working on this demographic feature, you create a new branch called demographic, and start working on your code in this branch.
+```
+# Create and switch to a new branch called demographic from the develop branch
+git checkout -b demographic
+
+# Work on this new feature and commit as you go
+git commit -m 'added gender recommendations'
+git commit -m 'added location specific recommendations'
+```
+
+Step 3: However, in the middle of your work, you need to work on another feature. So you commit your changes on this demographic branch, and switch back to the develop branch.
+```
+# Commit your changes before switching
+git commit -m 'refactored demographic gender and location recommendations '
+
+# Switch to the develop branch
+git checkout develop
+```
+Step 4: From this stable develop branch, you create another branch for a new feature called friend_groups.
+```
+# Create and switch to a new branch called friend_groups from the develop branch
+git checkout -b friend_groups
+```
+Step 5: After you finish your work on the friend_groups branch, you commit your changes, switch back to the development branch, merge it back to the develop branch, and push this to the remote repository’s develop branch.
+```
+# Commit your changes before switching
+git commit -m 'finalized friend_groups recommendations '
+
+# Switch to the develop branch
+git checkout develop
+
+# Merge the friend_groups branch into the develop branch
+git merge --no-ff friends_groups
+
+# Push to the remote repository
+git push origin develop
+```
+Step 6: Now, you can switch back to the demographic branch to continue your progress on that feature.
+```
+# Switch to the demographic branch
+git checkout demographic
+```
+### Scenario #2
+Let's walk through the Git commands that go along with each step in the scenario you just observed in the video.
+
+Step 1: You check your commit history, seeing messages about the changes you made and how well the code performed.
+```
+# View the log history
+git log
+```
+Step 2: The model at this commit seemed to score the highest, so you decide to take a look.
+```
+# Check out a commit
+git checkout bc90f2cbc9dc4e802b46e7a153aa106dc9a88560
+```
+After inspecting your code, you realize what modifications made it perform well, and use those for your model.
+
+Step 3: Now, you're confident merging your changes back into the development branch and pushing the updated recommendation engine.
+```
+# Switch to the develop branch
+git checkout develop
+
+# Merge the friend_groups branch into the develop branch
+git merge --no-ff friend_groups
+
+# Push your changes to the remote repository
+git push origin develop
+```
