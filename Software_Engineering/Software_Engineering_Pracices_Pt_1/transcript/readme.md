@@ -108,6 +108,7 @@ git push origin develop
 ```
 ### Scenario #3
 https://www.youtube.com/watch?v=36DOnNzvT4A
+
 While you were working on these changes, your co-worker, Andrew, has been working on improvements to the documentation of the same recommendation engine on a different branch called Documentation. Andrew commits his changes to the documentation branch, switches to the development branch and pulls down the latest changes from the remote repository on this branch, which includes the change I previously merged for the friend groups feature. Then, Andrew merges his documentation branch to the develop branch on his local repository, and then pushes his changes up to update the develop branch on the remote repository. After the team reviewed both of your work, they merged update from the develop branch to the master branch. Now, they pushed the changes to the master branch on the remote repository. These changes are now in production. Using branches, commit messages, and merging demonstrate just a few ways version control can be used in data science on a team, but the process will vary based on your team.
 
 Let's walk through the Git commands that go along with each step in the scenario you just observed in the video.
