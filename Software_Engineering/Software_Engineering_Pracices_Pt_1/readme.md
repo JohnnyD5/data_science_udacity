@@ -108,7 +108,7 @@ Whether it's an application or a package, your project should absolutely come wi
 
 Translating all your ideas and thoughts formally on paper can be a little difficult, but you'll get better over time, and doing so makes a significant difference in helping others realize the value of your project. Writing this documentation can also help you improve the design of your code, as you're forced to think through your design decisions more thoroughly. It also helps future contributors to follow your original intentions.
 
-## 11 Version Control
+## 11. Version Control
 ### Note on merge conflicts
 For the most part, Git makes merging changes between branches really simple. However, there are some cases where Git can become confused about how to combine two changes, and asks you for help. This is called a merge conflict.
 
