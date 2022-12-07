@@ -35,10 +35,10 @@ Use whitespace properly.
 * Separate sections with blank lines to keep your code well organized and readable.
 * Try to limit your lines to around 79 characters, which is the guideline given in the PEP 8 style guide. In many good text editors, there is a setting to display a subtle line that indicates where the 79 character limit is.
 ### 6. Writing modular code
-* Tip: DRY (Don't Repeat Yourself)
+* Tip: DRY (Don't Repeat Yourself)  
 Don't repeat yourself! Modularization allows you to reuse parts of your code. Generalize and consolidate repeated code in functions or loops.
 
-* Tip: Abstract out logic to improve readability
+* Tip: Abstract out logic to improve readability  
 Abstracting out code into a function not only makes it less repetitive, but also improves readability with descriptive function names. Although your code can become more readable when you abstract out logic into functions, it is possible to over-engineer this and have way too many modules, so use your judgement.
 
 * Tip: Minimize the number of entities (functions, classes, modules, etc.)
