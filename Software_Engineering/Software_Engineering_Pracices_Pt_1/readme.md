@@ -56,5 +56,8 @@ Try to use no more than three arguments when possible. This is not a hard rule a
 Knowing how to write code that runs efficiently is another essential skill in software development. Optimizing code to be more efficient can mean making it:
 * Execute faster
 * Take up less space in memory/storage
-* 
+
 The project on which you're working determines which of these is more important to optimize for your company or product. When you're performing lots of different transformations on large amounts of data, this can make orders of magnitudes of difference in performance.
+
+* Tip 1: Use vector operations over loops when possible, numpy and numpy method are faster than list and loop
+* Tip 2: Know your data structures and which methods are faster, set o(1) is much faster than list o(n)
