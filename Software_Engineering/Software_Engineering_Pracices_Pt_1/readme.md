@@ -78,13 +78,15 @@ Docstring, or documentation strings, are valuable pieces of documentation that e
 Docstrings are surrounded by triple quotes. The first line of the docstring is a brief explanation of the function's purpose.
 
 ### One-line docstring
-'''python
+```python
 def population_density(population, land_area):
     """Calculate the population density of an area."""
     return population / land_area
+```
 If you think that the function is complicated enough to warrant a longer description, you can add a more thorough paragraph after the one-line summary.
-'''
-Multi-line docstring
+
+### Multi-line docstring
+```python
 def population_density(population, land_area):
     """Calculate the population density of an area.
 
@@ -97,4 +99,5 @@ def population_density(population, land_area):
     particular area.
     """
     return population / land_area
+```
 The next element of a docstring is an explanation of the function's arguments. Here, you list the arguments, state their purpose, and state what types the arguments should be. Finally, it is common to provide some description of the output of the function. Every piece of the docstring is optional; however, doc strings are a part of good coding practice.
