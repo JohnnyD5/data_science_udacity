@@ -34,7 +34,7 @@ Use whitespace properly.
 * Organize your code with consistent indentation: the standard is to use four spaces for each indent. You can make this a default in your text editor.
 * Separate sections with blank lines to keep your code well organized and readable.
 * Try to limit your lines to around 79 characters, which is the guideline given in the PEP 8 style guide. In many good text editors, there is a setting to display a subtle line that indicates where the 79 character limit is.
-### 6. Writing modular code
+### 5. Writing modular code
 * Tip: DRY (Don't Repeat Yourself)  
 Don't repeat yourself! Modularization allows you to reuse parts of your code. Generalize and consolidate repeated code in functions or loops.
 
@@ -52,3 +52,9 @@ Arbitrary variable names in general functions can actually make the code more re
 
 * Tip: Try to use fewer than three arguments per function  
 Try to use no more than three arguments when possible. This is not a hard rule and there are times when it is more appropriate to use many parameters. But in many cases, it's more effective to use fewer arguments. Remember we are modularizing to simplify our code and make it more efficient. If your function has a lot of parameters, you may want to rethink how you are splitting this up.
+## 6. Efficient code
+Knowing how to write code that runs efficiently is another essential skill in software development. Optimizing code to be more efficient can mean making it:
+* Execute faster
+* Take up less space in memory/storage
+* 
+The project on which you're working determines which of these is more important to optimize for your company or product. When you're performing lots of different transformations on large amounts of data, this can make orders of magnitudes of difference in performance.
