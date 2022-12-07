@@ -79,6 +79,8 @@ Step 6: Now, you can switch back to the demographic branch to continue your prog
 git checkout demographic
 ```
 ### Scenario #2
+https://www.youtube.com/watch?v=w1iHWpwOkMg&t=79s
+After working on this recommendation feature for a while, you've created a model to produce recommendations based on friend groups. The model is scored pretty well on your validation set, but you remember it did even better just a few hours ago. You've been experimenting with tweaks to this model, and you're not sure what combination of parameters and tweaks were in place when your model scored the highest. Luckily, you've been including a message with each commit noting what you did as well as the training and cross-validation scores for each commit. Instead of spending a bunch of time trying to retrace your steps from memory or testing a bunch of tweaks again to try and get the same score, you can check your commit history seeing messages of the changes you need and how well it performed. The model at this commit seem to be scoring the highest, so you decide to take a look. After inspecting your code, you've realized what modifications made this perform well and use those for your model. Now, you're pretty confident merging this back to the develop branch and pushing the updated recommendation engine.
 Let's walk through the Git commands that go along with each step in the scenario you just observed in the video.
 
 Step 1: You check your commit history, seeing messages about the changes you made and how well the code performed.
@@ -103,4 +105,36 @@ git merge --no-ff friend_groups
 
 # Push your changes to the remote repository
 git push origin develop
+```
+### Scenario #3
+While you were working on these changes, your co-worker, Andrew, has been working on improvements to the documentation of the same recommendation engine on a different branch called Documentation. Andrew commits his changes to the documentation branch, switches to the development branch and pulls down the latest changes from the remote repository on this branch, which includes the change I previously merged for the friend groups feature. Then, Andrew merges his documentation branch to the develop branch on his local repository, and then pushes his changes up to update the develop branch on the remote repository. After the team reviewed both of your work, they merged update from the develop branch to the master branch. Now, they pushed the changes to the master branch on the remote repository. These changes are now in production. Using branches, commit messages, and merging demonstrate just a few ways version control can be used in data science on a team, but the process will vary based on your team.
+
+Let's walk through the Git commands that go along with each step in the scenario you just observed in the video.
+
+Step 1: Andrew commits his changes to the documentation branch, switches to the development branch, and pulls down the latest changes from the cloud on this development branch, including the change I merged previously for the friends group feature.
+```
+# Commit the changes on the documentation branch
+git commit -m "standardized all docstrings in process.py"
+
+# Switch to the develop branch
+git checkout develop
+
+# Pull the latest changes on the develop branch down
+git pull
+```
+Step 2: Andrew merges his documentation branch into the develop branch on his local repository, and then pushes his changes up to update the develop branch on the remote repository.
+```
+# Merge the documentation branch into the develop branch
+git merge --no-ff documentation
+
+# Push the changes up to the remote repository
+git push origin develop
+
+Step 3: After the team reviews your work and Andrew's work, they merge the updates from the development branch into the master branch. Then, they push the changes to the master branch on the remote repository. These changes are now in production.
+```
+# Merge the develop branch into the master branch
+git merge --no-ff develop
+
+# Push the changes up to the remote repository
+git push origin master
 ```
