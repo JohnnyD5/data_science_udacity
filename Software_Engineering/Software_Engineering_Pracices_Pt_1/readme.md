@@ -61,3 +61,10 @@ The project on which you're working determines which of these is more important 
 
 * Tip 1: Use vector operations over loops when possible, numpy and numpy method are faster than list and loop
 * Tip 2: Know your data structures and which methods are faster, set o(1) is much faster than list o(n)
+## 7. Documentation
+* Documentation: Additional text or illustrated information that comes with or is embedded in the code of software.
+* Documentation is helpful for clarifying complex parts of code, making your code easier to navigate, and quickly conveying how and why different components of your program are used.
+* Several types of documentation can be added at different levels of your program:
+  * Inline comments - line level
+  * Docstrings - module and function level
+  * Project documentation - project level
