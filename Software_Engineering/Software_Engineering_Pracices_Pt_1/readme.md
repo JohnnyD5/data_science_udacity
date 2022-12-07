@@ -107,3 +107,58 @@ Project documentation is essential for getting others to understand why and how 
 Whether it's an application or a package, your project should absolutely come with a **README file**. At a minimum, this should explain what it does, list its dependencies, and provide sufficiently detailed instructions on how to use it. Make it as simple as possible for others to understand the purpose of your project and quickly get something working.
 
 Translating all your ideas and thoughts formally on paper can be a little difficult, but you'll get better over time, and doing so makes a significant difference in helping others realize the value of your project. Writing this documentation can also help you improve the design of your code, as you're forced to think through your design decisions more thoroughly. It also helps future contributors to follow your original intentions.
+
+## 11 Version Control
+Scenario #1
+Let's walk through the Git commands that go along with each step in the scenario you just observed in the video.
+
+Step 1: You have a local version of this repository on your laptop, and to get the latest stable version, you pull from the develop branch.
+```
+# Switch to the develop branch
+git checkout develop
+
+# Pull the latest changes in the develop branch
+git pull
+```
+Step 2: When you start working on this demographic feature, you create a new branch called demographic, and start working on your code in this branch.
+```
+# Create and switch to a new branch called demographic from the develop branch
+git checkout -b demographic
+
+# Work on this new feature and commit as you go
+git commit -m 'added gender recommendations'
+git commit -m 'added location specific recommendations'
+```
+
+Step 3: However, in the middle of your work, you need to work on another feature. So you commit your changes on this demographic branch, and switch back to the develop branch.
+```
+# Commit your changes before switching
+git commit -m 'refactored demographic gender and location recommendations '
+
+# Switch to the develop branch
+git checkout develop
+```
+Step 4: From this stable develop branch, you create another branch for a new feature called friend_groups.
+```
+# Create and switch to a new branch called friend_groups from the develop branch
+git checkout -b friend_groups
+```
+Step 5: After you finish your work on the friend_groups branch, you commit your changes, switch back to the development branch, merge it back to the develop branch, and push this to the remote repository’s develop branch.
+```
+# Commit your changes before switching
+git commit -m 'finalized friend_groups recommendations '
+
+# Switch to the develop branch
+git checkout develop
+
+# Merge the friend_groups branch into the develop branch
+git merge --no-ff friends_groups
+
+# Push to the remote repository
+git push origin develop
+```
+Step 6: Now, you can switch back to the demographic branch to continue your progress on that feature.
+```
+# Switch to the demographic branch
+git checkout demographic
+```
