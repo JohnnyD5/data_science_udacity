@@ -13,5 +13,5 @@ We want to test our functions in a way that is repeatable and automated. Ideally
 ### Unit test advantages and disadvantages
 The advantage of unit tests is that they are isolated from the rest of your program, and thus, no dependencies are involved. They don't require access to databases, APIs, or other external sources of information. However, passing unit tests isn’t always enough to prove that our program is working successfully. To show that all the parts of our program work with each other properly, communicating and transferring data between them correctly, we use integration tests. In this lesson, we'll focus on unit tests; however, when you start building larger programs, you will want to use integration tests as well.
 
-To learn more about integration testing and how integration tests relate to unit tests, see Integration[https://www.fullstackpython.com/integration-testing.html] Testing. That article contains other very useful links as well.
+To learn more about integration testing and how integration tests relate to unit tests, see [Integration Testing](https://www.fullstackpython.com/integration-testing.html). That article contains other very useful links as well.
 
